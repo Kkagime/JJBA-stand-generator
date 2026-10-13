@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Which Stand Awakens in You?</title>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Bangers&family=Abril+Fatface&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#ff4fa3;--hot:#ff2f92;--cyan:#19c3e6;--yel:#ffd21f;--org:#ff8a1f;--ink:#0a0612;--panel:rgba(16,6,38,.88);--muted:#dccdf5;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+.t-diamonds{background:linear-gradient(100deg,transparent 35%,rgba(0,0,0,.88) 100%),repeating-linear-gradient(45deg,transparent 0 38px,rgba(255,170,255,.35) 38px 40px),repeating-linear-gradient(-45deg,transparent 0 38px,rgba(255,170,255,.35) 38px 40px),linear-gradient(160deg,#b0278f,#5d1a8c)}
+.t-stripes{background:repeating-linear-gradient(0deg,#2a6f9f 0 44px,#8b9097 44px 88px)}
+.t-hatch{background:repeating-linear-gradient(78deg,rgba(60,0,10,.6) 0 2px,transparent 2px 9px),radial-gradient(circle at 60% 30%,#e8434d,#8c1027 75%)}
+.t-streaks{background:repeating-linear-gradient(105deg,transparent 0 70px,var(--cyan) 70px 78px,transparent 78px 150px,#fff 150px 152px,transparent 152px 230px),radial-gradient(circle at 50% 40%,#ff3a3a,#b3121f)}
+.t-teal{background:linear-gradient(180deg,#17a58e,#0a6a5e)}
+.t-rain{background:repeating-linear-gradient(72deg,rgba(255,255,255,.4) 0 1.5px,transparent 1.5px 15px),linear-gradient(180deg,#7fb05a,#2c6a37)}
+.t-gold{background:repeating-conic-gradient(from 0deg at 50% 50%,var(--yel) 0 5deg,var(--org) 5deg 10deg)}
+body{margin:0;min-height:100vh;color:#fff;font-family:"Trebuchet MS","Segoe UI",sans-serif;font-weight:600;padding:22px 16px 48px;overflow-x:hidden;background-attachment:fixed}
+.sfx{position:fixed;font-family:"Dela Gothic One",Impact,sans-serif;pointer-events:none;white-space:nowrap;z-index:0;line-height:1;animation:shk .3s steps(2) infinite,pls 3.2s ease-in-out infinite;-webkit-text-stroke:9px #fff;paint-order:stroke fill;filter:drop-shadow(3px 0 0 #000) drop-shadow(-3px 0 0 #000) drop-shadow(0 3px 0 #000) drop-shadow(0 -3px 0 #000)}
+.s1{top:7%;left:-2%;font-size:92px;color:var(--pink);rotate:-10deg}
+.s2{top:46%;right:-4%;font-size:100px;color:#2455ff;rotate:7deg;animation-delay:-.1s,-1.1s}
+.s3{bottom:3%;left:-2%;font-size:84px;color:#e0162b;rotate:-5deg;animation-delay:-.2s,-2.1s}
+.s4{top:3%;right:-3%;font-size:64px;color:#ffd21f;rotate:9deg;animation-delay:-.15s,-.6s}
+.s5{bottom:10%;right:-2%;font-size:68px;color:#19c3e6;rotate:-7deg;animation-delay:-.25s,-1.6s}
+@keyframes shk{0%{translate:0 0}25%{translate:2px -2px}50%{translate:-2px 1px}75%{translate:1px 2px}100%{translate:-1px -1px}}
+@keyframes pls{50%{scale:1.09}}
+.pop{position:fixed;z-index:50;pointer-events:none;text-align:center;font-family:"Dela Gothic One",Impact,sans-serif;line-height:1;white-space:nowrap;transform:translate(-50%,-50%);-webkit-text-stroke:9px #fff;paint-order:stroke fill;filter:drop-shadow(3px 0 0 #000) drop-shadow(-3px 0 0 #000) drop-shadow(0 3px 0 #000) drop-shadow(0 -3px 0 #000);animation:pop 1.4s ease-out forwards,shk .25s steps(2) infinite}
+.pop small{display:block;margin-top:6px;font-family:Bangers,Impact,sans-serif;font-size:.26em;letter-spacing:3px;color:#fff;-webkit-text-stroke:5px #000}
+@keyframes pop{0%{opacity:0;scale:2.6;rotate:-20deg}12%{opacity:1;scale:1;rotate:var(--r)}72%{opacity:1;scale:1.08;rotate:var(--r)}100%{opacity:0;scale:1.25;rotate:var(--r)}}
+.band{overflow:hidden;white-space:nowrap;margin:-8px -22px 12px;background:var(--ink);border-block:3px solid #fff}
+.band span{display:inline-block;font-family:"Dela Gothic One",Impact,sans-serif;font-size:28px;color:var(--yel);padding:3px 0;animation:mq 5s linear infinite}
+@keyframes mq{to{translate:-50%}}
+@media (prefers-reduced-motion:reduce){.sfx,.band span{animation:none}}
+.spk{position:fixed;background:#fff;clip-path:polygon(50% 0,58% 42%,100% 50%,58% 58%,50% 100%,42% 58%,0 50%,42% 42%);z-index:0;pointer-events:none;animation:tw 3.2s ease-in-out infinite}
+@keyframes tw{50%{transform:scale(.45) rotate(25deg);opacity:.55}}
+.wrap{position:relative;z-index:1;max-width:660px;margin:0 auto}
+h1,h2{font-weight:400;margin:0}
+.logo{text-align:center;margin:4px 0 28px;position:relative}
+.by{font-family:Bangers,Impact,sans-serif;letter-spacing:5px;font-size:15px;color:#fff;text-shadow:1px 1px 0 #000}
+.by::before,.by::after{content:"\25C6";margin:0 8px;color:var(--yel)}
+h1{font-family:"Abril Fatface","Playfair Display",Georgia,serif;font-size:clamp(38px,11vw,66px);line-height:.98;color:#fff;-webkit-text-stroke:7px var(--ink);paint-order:stroke fill;filter:drop-shadow(4px 4px 0 var(--hot));margin-top:6px}
+.dia{position:absolute;right:-4px;bottom:-34px;width:46px;height:46px;transform:rotate(45deg);background:linear-gradient(135deg,#8ff0ff,#19a8e0);border:3px solid #fff;box-shadow:0 0 0 3px var(--ink);display:grid;place-items:center}
+.dia span{transform:rotate(-45deg);font-family:"Dela Gothic One",Impact,sans-serif;color:#fff;-webkit-text-stroke:3px var(--ink);paint-order:stroke fill;font-size:17px}
+.card{background:var(--panel);border:3px solid #fff;padding:22px;margin-bottom:28px;box-shadow:0 0 0 4px var(--ink),11px 11px 0 4px var(--ink);position:relative;overflow:hidden}
+.card::after{content:"";position:absolute;right:0;bottom:0;width:55%;height:50%;pointer-events:none;background:radial-gradient(#fff 1.2px,transparent 1.6px) 0 0/7px 7px;opacity:.13;-webkit-mask-image:linear-gradient(135deg,transparent 45%,#000);mask-image:linear-gradient(135deg,transparent 45%,#000)}
+.card>*{position:relative;z-index:1}
+p{line-height:1.55;margin:.4em 0}
+.muted{color:var(--muted)}
+label,.lab{display:inline-block;font-family:Bangers,Impact,sans-serif;letter-spacing:2px;font-size:21px;color:#fff;background:var(--pink);border:3px solid var(--ink);padding:1px 12px;transform:skewX(-10deg);margin:18px 0 8px;text-shadow:1px 1px 0 var(--ink)}
+input[type=text],input[type=email]{width:100%;padding:12px;border:4px solid var(--ink);background:#fff;color:var(--ink);font-size:16px;font-weight:700;box-shadow:5px 5px 0 var(--cyan)}
+button{font:inherit;cursor:pointer;color:inherit}
+button:focus-visible,input:focus-visible{outline:4px solid var(--cyan);outline-offset:3px}
+.go{width:100%;margin-top:20px;padding:14px;background:linear-gradient(180deg,var(--yel),var(--org));color:var(--ink);border:4px solid var(--ink);font-family:"Dela Gothic One",Impact,sans-serif;font-size:19px;box-shadow:0 0 0 3px #fff,7px 7px 0 3px var(--ink);transform:skewX(-5deg);transition:transform .1s}
+.go:hover{background:var(--pink);color:#fff;transform:skewX(-5deg) translate(-3px,-3px)}
+.req{background:linear-gradient(180deg,#ff5fb0,#c2188a);color:#fff;-webkit-text-stroke:1px var(--ink)}.req:hover{background:var(--cyan);color:var(--ink)}
+.skip{background:rgba(255,255,255,.12);color:#fff;font-size:15px;margin-top:14px}
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chip{padding:8px 13px;border:3px solid #fff;background:rgba(255,255,255,.08);font-weight:800;box-shadow:3px 3px 0 var(--ink);transform:skewX(-8deg)}
+.chip[aria-pressed=true]{background:var(--pink);border-color:var(--ink);color:#fff}
+.prog{height:18px;background:rgba(255,255,255,.12);border:3px solid #fff;margin-bottom:10px}
+.prog i{display:block;height:100%;width:0;background:repeating-linear-gradient(-45deg,var(--pink) 0 7px,var(--ink) 7px 10px,var(--cyan) 10px 17px,var(--ink) 17px 20px);transition:width .3s}
+#pcount{font-family:Bangers,Impact,sans-serif;letter-spacing:2px;font-size:20px;color:#fff;text-shadow:2px 2px 0 var(--ink);padding-bottom:7px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='6'%3E%3Cpath d='M0 3Q4 0 8 3T16 3' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E") repeat-x left bottom;display:inline-block}
+.q{font-family:"Dela Gothic One",Impact,sans-serif;font-size:clamp(19px,4.8vw,25px);line-height:1.3;margin:16px 0 20px;color:#fff;-webkit-text-stroke:6px var(--ink);paint-order:stroke fill;filter:drop-shadow(3px 3px 0 var(--hot))}
+.opt{display:block;width:100%;text-align:left;margin-bottom:11px;padding:12px 14px 12px 42px;background:rgba(255,255,255,.08);border:3px solid #fff;font-size:16px;font-weight:800;box-shadow:4px 4px 0 var(--ink);position:relative;transition:transform .1s,background .1s}
+.opt::before{content:"\25C6";position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--pink);font-size:18px}
+.opt:hover{background:var(--yel);color:var(--ink);border-color:var(--ink);transform:translate(6px,-2px)}
+.other{border-style:dashed;color:var(--muted)}
+.opanel{margin-top:8px;padding:12px;border:3px dashed var(--cyan);background:rgba(0,0,0,.25)}
+.hd{position:relative;margin:16px 0 14px;padding:22px 16px;text-align:center}
+.burst{position:absolute;inset:-6px -14px;width:calc(100% + 28px);height:calc(100% + 12px);overflow:visible}
+.name{position:relative;font-family:"Dela Gothic One",Impact,sans-serif;font-size:clamp(28px,8.5vw,48px);line-height:1.05;color:var(--hot);margin:0;-webkit-text-stroke:7px var(--ink);paint-order:stroke fill;transform:skewX(-6deg);animation:slam .45s ease-out}
+@keyframes slam{from{transform:skewX(-6deg) scale(1.8);opacity:0}to{transform:skewX(-6deg) scale(1);opacity:1}}
+@media (prefers-reduced-motion:reduce){.name,.spk{animation:none}.prog i,.opt,.go{transition:none}}
+.sec{margin:22px 0 16px;padding:12px 14px;background:rgba(255,255,255,.07);border:3px solid #fff;box-shadow:4px 4px 0 var(--ink)}
+.sec b{display:table;font-family:Bangers,Impact,sans-serif;letter-spacing:2px;font-size:19px;color:#fff;background:var(--pink);border:3px solid var(--ink);padding:0 10px;transform:skewX(-10deg);margin:-26px 0 6px -6px;text-shadow:1px 1px 0 var(--ink)}
+.sec div{line-height:1.5;white-space:pre-line}
+.art:not([class*=" t-"]){background:#fff}
+.art{border:4px solid #fff;margin:16px 0;box-shadow:0 0 0 4px var(--ink),7px 7px 0 4px var(--ink);color:var(--ink)}
+.art svg{display:block;width:100%;height:auto}
+.hide{display:none}
+</style>
+</head>
+<body class="t-diamonds">
+<div class="sfx s1" aria-hidden="true">ゴゴゴ</div><div class="sfx s2" aria-hidden="true">ドドド</div><div class="sfx s3" aria-hidden="true">オオオ</div><div class="sfx s4" aria-hidden="true">ズズズ</div><div class="sfx s5" aria-hidden="true">バァーン</div><div id="spk" aria-hidden="true"></div>
+<main class="wrap">
+<header class="logo"><div class="by">STAND ABILITY TRIAL</div><h1>Which Stand Awakens in You?</h1></header>
+
+<section class="card" id="intro">
+<p>Answer 15 situational and personality questions to awaken the Stand ability inside you.</p>
+<label for="uname">Your name</label>
+<input id="uname" type="text" maxlength="30" placeholder="Enter your name" autocomplete="off">
+
+<div class="lab">Your bloodline</div>
+<div class="chips" id="origins"></div>
+<p class="muted" id="odesc"></p>
+<div id="mast" class="hide"><div class="lab">Your mastery</div><div class="chips" id="mchips"></div><p class="muted" id="mdesc"></p></div>
+<button class="go" id="start" data-big>Awaken my Stand!</button>
+</section>
+
+<section class="card hide" id="quiz">
+<div class="prog"><i id="pbar"></i></div>
+<div class="muted" id="pcount"></div>
+<div class="q" id="qtext"></div>
+<div id="opts"></div>
+<div class="opanel hide" id="opanel">
+<label for="otext" style="margin-top:0">What would you do?</label>
+<input id="otext" type="text" maxlength="80" placeholder="Describe it in a few words">
+<div class="lab">It is closest to...</div>
+<div class="chips" id="otraits"></div>
+<button class="go" id="oconfirm">Confirm answer</button>
+</div>
+</section>
+
+<section class="hide" id="result">
+
+<div class="card" id="namecard">
+<div class="lab">Your Stand has awakened!</div>
+<p>Every Stand needs a name, and in JoJo they are almost always named after music: a band, a song or an album. What will you call yours?</p>
+<label for="sname">Name your Stand</label>
+<input id="sname" type="text" maxlength="40" placeholder="e.g. Starlight Brigade, Fool's Garden" autocomplete="off">
+<div class="lab">Want a copy?</div>
+<div class="chips"><button type="button" class="chip" id="mailtog" aria-pressed="false">Also send a copy to my Gmail</button></div>
+<div id="mailrow" class="hide"><label for="uemail">Your Gmail address</label><input id="uemail" type="email" placeholder="e.g. user@gmail.com" autocomplete="email"><p class="muted hide" id="mailerr" style="color:var(--yel)">Please enter a valid email address.</p></div>
+<button class="go" id="nameit" data-big>Name my Stand!</button>
+<button class="go skip" id="skipname" data-big>Skip naming</button>
+</div>
+
+<div class="card" id="out"></div>
+
+<div class="card hide" id="sentcard">
+<div class="lab">Your copy</div>
+<p class="muted" id="sentmsg"></p>
+<a class="go" id="maillink" target="_blank" rel="noopener" style="display:block;text-align:center;text-decoration:none">Open email draft</a>
+<button class="go skip" id="copyrep">Copy full report</button>
+</div>
+
+<div class="card hide" id="rpanel"><p>The Requiem Arrow pierces your Stand. Requiem answers your willpower, resolve and state of mind at this exact moment.</p><div class="lab">What drives you right now?</div><div class="chips" id="rdrive"></div><div class="lab">How strong is your will?</div><div class="chips" id="rwill"></div><button class="go req" id="rgo" data-big>Pierce the Stand</button></div><div class="card hide" id="rq"></div>
+<button class="go req hide" id="reqbtn">Awaken Requiem</button>
+<button class="go" id="again">Take the trial again</button>
+</section>
+</main>
+
+<script>
+const T=["Aggression","Defense","Cunning","Independence","Bonds","Growth"];
+const CH=["Fight it head-on","Hold my ground","Outsmart it","Go my own way","Rely on others","Push myself to grow"];
+
+const Q=[
+["Someone cuts you in line. You...",[["Call them out right there.",0],["Stay put and refuse to be moved.",1],["Remember their face. It will matter later.",2],["Let it go and walk away.",3]]],
+["Your ideal Saturday looks like...",[["Hitting the gym or a pickup game and pushing until I win something.",0,5],["Staying in, keeping the house in order and enjoying a quiet routine where nothing goes wrong.",1],["Heading out alone with no plan, exploring somewhere I've never been.",3,5],["Spending the day with my closest people with no set plans, just being together.",4]]],
+["It's late at night and a close friend calls you in a panic. Someone is threatening them and they have nowhere safe to go. You...",[["Go straight at what is hurting them.",0,4],["Shield them and take the hit.",1,4],["Work out a plan first.",2,4],["Rally everyone who can help.",4]]],
+["In a group project, you are the one who...",[["Pushes everyone to finish.",0,2],["Holds it together when things go wrong.",1,4],["Finds the shortcut nobody saw.",2,5],["Does your part your own way.",3]]],
+["What scares you most?",[["Being powerless.",0,1],["Losing what I've built.",1],["Being outsmarted.",2],["Being left alone.",4]]],
+["You're about to walk into the most dangerous place of your life. Which tool entices you the most?",[["A heavy steel crowbar. Whatever is in my way, I can break it.",0],["A tower shield. Nothing gets past me.",1],["A set of precision lockpicks and a notebook. There is always a way in if I look.",2],["A compass and a hand-drawn map. I'll find my own route.",3,5]]],
+["After a big failure, you...",[["Get angry and go again, harder.",0,5],["Endure it and keep standing.",1],["Study what went wrong.",2,5],["Lean on people close to me.",4]]],
+["What do you want most from life?",[["To be the strongest.",0,5],["To protect what matters.",1,4],["Freedom, on my own terms.",3,5],["To become someone I'm not yet.",5]]],
+["Someone mocks something you love. You...",[["Make them regret it.",0],["Let it bounce off me.",1],["Quietly turn it against them later.",2],["Stop caring what they think.",3]]],
+["You hear a strange noise alone at night. You...",[["Grab something heavy and go look.",0],["Lock the door and wait it out.",1,2],["Listen first and map where it comes from.",2],["Call someone to come over.",4]]],
+["When your friends describe you, they say you are someone who...",[["speaks up and steps in first when things get tense.",0],["stays steady and doesn't crack under pressure.",1],["notices everything and thinks three steps ahead.",2],["does things their own way and doesn't need anyone's approval.",3,5]]],
+["An enemy is far stronger than you. You...",[["Hit first and hit hard.",0],["Outlast them.",1,5],["Look for the one weakness.",2],["Trust my allies to cover me.",4,5]]],
+["You find a bizarre artifact granting immense power. You...",[["Claim it immediately to power up.",0,5],["Guard it so no one misuses it.",1,4],["Analyze its mechanics and secrets.",2,5],["Share its power among your crew.",4]]],
+["You're walking home late at night when a stranger steps out and blocks your path, clearly looking for trouble. You...",[["Square up and make it clear I'll fight if I have to.",0],["Plant my feet, guard myself and let them make the first move.",1],["Size them up, check for exits and try to talk my way out.",2],["Cross the street and quietly take another route.",3]]],
+["When forced into a critical life choice, you follow...",[["Your raw gut and combat instincts.",0],["Your unwavering moral code.",1,4],["Calculated logic and strategy.",2],["Your inner desire for evolving personal freedom.",3,5]]]
+];
+const EXTRA=[
+[["Ask someone nearby to back me up.",4],["Treat it as practice for staying calm.",5]],
+[["Working on a puzzle or project that needs careful planning and clever thinking.",2],["Picking up a brand new skill and practicing it until I get it right.",5]],
+[["Handle it quietly on my own.",3],["Use this to become someone who can handle anything.",5]],
+[["Keeps the team talking and morale up.",4],["Learns every role to fill any gap.",5]],
+[["Being trapped or controlled.",3],["Never getting any better.",5]],
+[["A two-way radio. I stay in contact with everyone I trust.",4],["A blank sketchbook and pencil. I'll learn what is out there as I go.",5]],
+[["Walk it off alone and reset.",3],["Treat it as training and come back stronger.",5]],
+[["To understand how everything works.",2],["To be surrounded by people who trust me.",4]],
+[["Find friends who get it.",4],["Use it to push myself to be better.",5]],
+[["Slip out quietly and avoid it.",3],["Treat it as a chance to face my fear.",5]],
+[["always shows up for the people they love.",4],["keeps changing and getting better at things.",5]],
+[["Keep my distance and watch.",3],["Learn from every hit.",5]],
+[["Hide it and use it only when needed.",3],["Study how to master it over time.",5]],
+[["Call someone I trust and keep them on the line.",4],["Stay calm and treat it as a chance to learn how I handle danger.",5]],
+[["What my closest people need from me.",4],["The path that lets me grow the most.",5]]];
+Q.forEach((q,i)=>q[1].push(...EXTRA[i]));
+const DOM=[
+["Every punch it throws is stored instead of delivered. The impact sinks into the target as a faint pulse, and when you snap your fingers, every stored hit lands at the same instant. Five jabs and one snap hits like a car crash, and you choose the moment. The pulses fade after about a minute and it can only hold ten at a time.","Anything it hits gets marked with a glowing handprint. Every later hit on a marked target lands heavier than the last, doubling in force each time up to a limit. Someone who shrugs off the first punch is on their knees by the fourth. It can only keep one target marked, and the mark vanishes the moment you mark someone else.","On its own it hits about as hard as a normal person. What it does is charge objects: pick up a pen, a brick or a steel pipe and it loads that object with force that releases on impact. A thrown coin can punch through a car door. It only works on things you are holding or have just thrown, so you always need something in your hands."],
+["Whatever it touches turns hard as stone for a few seconds. Put its hands on a wall, your jacket or an incoming fist and that surface soaks up the blow. Lower its guard and the soaked-up force pushes back out in the direction it came from. It works like a spring, and a hit big enough to crack the shell breaks the spring as well.","It spreads a shimmering field a few meters around you. Anything that would hurt you inside it, a bullet, a blade or a punch, freezes in midair and takes about three seconds to land. You can use those three seconds to step aside, but each attack only gets slowed once, and holding the field up wears you out fast.","It builds slabs of hardened stone, footholds, walls and steps wherever you point. You can wall off a corridor, bridge a pit or box an enemy in. Each slab lasts about ten seconds and it can keep six standing at once, so you have to decide which ones matter."],
+["It lays fine threads, thinner than hair, along floors, walls and doorways as it moves. Anything that crosses a thread sends a tug back to you, so you know where someone has been and which way they are heading. With enough threads down you can predict an enemy's route. It cannot attack by itself, and a careful enemy can step over the lines.","It memorizes two objects by touching them, then swaps their positions whenever you snap your fingers. A knife in an enemy's hand trades places with a pillow, or a door with a wall. The range is about fifteen meters and both objects have to be roughly the same size.","It pulls a target's Stand or memories out as a thin disc. The target goes blank, with no Stand and no memory of what was taken. The disc can be stored, read like a recording or pushed into someone else, who becomes its new host. Putting a disc in takes a few seconds, and a Stand will only obey a host who accepts it."],
+["It splits from you and roams up to a kilometer away, seeing and hearing what it passes. It can push objects, press buttons and even throw a punch, but at that distance it hits about as hard as a child. You only see through it while it moves, and your own body is left unguarded the whole time.","It leaves small marks of itself in places you visit, a smudge of paint, a scrap of cloth, a drop of water. Later you can reach out through any mark and move things near it. Go back to a cafe you sat in last week and you can flip its table from across town. Each mark lasts about a day and you can keep five at once.","It carries small objects and messages to any place you have already been. A note, a key or a set of lockpicks can be sent ahead into a locked room. It can only carry a few kilograms and cannot pass through walls, so the plan has to include how it gets there."],
+["It links your body to the people you care about. When one of them is hurt, you feel it, and when one of them is strong, you borrow a little of it. Link three people and a wound is split among all of you, while the strongest fighter lends some power to everyone. It only works on people who trust you, and it cannot be forced on a stranger.","It sends out glowing tethers to anyone you trust. When they call for you, the tether snaps tight and pulls one of you straight to the other's side, through anything but solid walls. A group scattered through a building can regroup in a second. Each pull drains you a little, and each person can only be pulled once a minute.","It lets two people swap senses or abilities for about ten seconds. A scout can borrow a sniper's eyes, or a Stand user can lend their Stand's power to someone who has none. You decide who swaps with whom, and the more complicated the swap, the faster it wears you out."],
+["After it takes a hit, it learns the shape of that attack and copies it in a stronger form for the next ten seconds. Get slashed by a blade and it grows a sharper one of its own. It can only hold one copied ability at a time, and the copy fades when the fight pauses.","After every setback, a new power unlocks in one part of the Stand. Lose a fight and a hand grows claws. Get knocked down and it learns to catch itself. The new powers never go away, but each one only appears after something goes wrong, so you have to lose a little to get stronger.","It starts with a single small trick, like freezing a coin in place for a second, and gets slightly better every time you use it. After a hundred uses it freezes a car. After a thousand, it freezes a whole room. It is slow and weak at first, and only patient users ever see it at full power."]];
+const TW=["It can also send a shockwave through whatever it hits, which keeps rippling for a couple of seconds and knocks nearby enemies off balance.","It can also anchor you to the ground, so no push, tackle or explosion can move you for about five seconds.","It can also hide itself so well that even other Stand users have to concentrate to see it.","It can also slip through shadows and thin gaps like the space under a door, as long as it can see where it is going.","It can also share your senses with one person you trust, so they see and hear exactly what you do.","It can also reshape its arms into whatever the situation needs, a hook, a shield or a rope, within a couple of seconds."];
+const CO=["It has almost no killing power of its own. Its hardest hit is no worse than a firm shove, so an enemy who keeps walking through it will win unless you find another way to stop them.","It is fragile. Any damage it takes shows up on your body too, so a cut on the Stand opens the same cut on you, and a heavy enough hit can break it outright.","It only works the way it was built. An enemy who notices the pattern, like which objects it targets or how far it reaches, can avoid it every time, and it has no way to improvise past that.","It leans on other people. The further you are from help, the weaker it gets, and when you are completely alone it barely functions.","It works best when you are alone. If an ally stands close enough to be caught in its power, it hurts them as much as the enemy.","It never changes. It stays exactly as strong as it is today, and once someone studies it, the advantage is gone."];
+const TY=["Close-Range Power","Automatic Defensive","Long-Distance Operating","Remote Roaming","Colony / Bound","Experience Type"];
+const WHY0=["you meet problems head-on","you dig in and refuse to be moved","you read a situation before you act","you would rather handle things your own way","you lean on the people close to you and they lean on you","you keep pushing to become more than you are"];
+const OR=[
+{n:"Human",d:"Pure spirit. No special blood, so your Stand grows freely in any direction.",dev:"your Stand comes only from your own spirit, so it can grow in any direction.",tw:"Because it comes from pure spirit, it adapts: after watching an enemy for a few minutes, it starts to anticipate their habits.",wk:"With no borrowed power behind it, there is no hidden second wind if it is overwhelmed in a straight fight.",b:{5:.2}},
+{n:"Hamon User",d:"Your breathing carries sunlight energy that can flow through a Stand.",dev:"your Hamon training lets your Stand carry sunlight energy, so it can grow into something that burns the undead on contact.",tw:"Its hits carry Hamon, so they burn vampires and the undead on contact, and the energy runs along anything it touches, like wire or water.",wk:"It depends on your breathing. If you are winded or choking, the Hamon cuts out and its abilities weaken until you recover.",b:{0:.2,3:.1}},
+{n:"Spin User",d:"Your Golden Spin gives you perfect rotation that a Stand can borrow.",dev:"your mastery of Spin lets your Stand work with rotation, so its power can grow into precise, spiraling force.",tw:"Its touch sets objects spinning with perfect golden rotation, so a spinning coin or ball keeps its power without slowing down.",wk:"It depends on rhythm and balance. Slip on a wet floor, get thrown off balance or lose count, and the Spin breaks, and so does the ability until you reset.",b:{4:.2,1:.1}},
+{n:"Vampire",d:"A thirst for life energy; strength, regeneration and a deadly weakness to the sun.",dev:"your vampiric blood lets your Stand feed on life energy, so it can grow into a relentless, self-healing predator.",tw:"It drains life energy from whatever it hits and uses it to heal both itself and you.",wk:"Sunlight burns both you and the Stand. In daylight its abilities weaken and it cannot heal.",b:{3:.25,0:.1}},
+{n:"Pillar Man",d:"The ultimate lifeform: absorption, adaptation and terrifying power.",dev:"your Pillar Man nature lets your Stand absorb and adapt, so it can grow toward an ultimate form.",tw:"It absorbs whatever it touches, including abilities, and adds them to its own for a short time.",wk:"Sunlight and Hamon are lethal. Hamon ripples hit both you and the Stand hard, and direct sun can destroy the Stand along with you.",b:{0:.2,5:.2}}];
+const RQ=["Its strikes now land before you decide to throw them, and every hit repeats once more a moment later. Anyone it touches is hit twice by the same blow.","Damage that reaches you or the Stand is erased and sent back at the attacker, along with the force of every earlier hit the shell absorbed.","It can rewrite the outcome of anything it has marked: a killing blow becomes a miss, a locked door becomes an open one. The change happens after the fact, and only to what its threads touched.","It is everywhere it has ever been, all at once. Anywhere it left a trace, it can act, no matter how far away.","Every bond becomes a live link. The whole circle shares strength, wounds and senses at once, so one hurt member is carried by all the rest.","It stops evolving from the past and takes the best answer to any threat as that threat appears, instantly and without limit."];
+const RO=["Pure spirit rewrites the rules of the ability itself.","Hamon floods the Stand with unending sunlight energy.","Perfect rotation spins the ability into an endless loop.","Its hunger becomes endless, healing it faster than it is hurt.","It absorbs ability itself, making it the ultimate form."];
+const RW=["Requiem's price: its effects can loop back onto you if your resolve slips, so hesitating for even a second can send an attack home on yourself.","Requiem's price: it demands total commitment. Every moment of doubt drains it, and one flinch can strip its power for the rest of the fight.","Requiem's price: knowing so much weighs on you. Each use leaves you less sure which outcomes are real, and the longer the fight, the more it clouds your judgment.","Requiem's price: the freer it gets, the harder it is to call back, and some days it may refuse to return when you need it.","Requiem's price: everything is shared, so a loved one's pain is now yours and yours is theirs, with no way to switch it off.","Requiem's price: it never stops changing and forces you to keep changing with it. If you ever stop, it starts to come apart."];
+const TYV=[["Close-Range Power","Close-Range Power","Tool Type"],["Automatic Defensive","Field Type","Tool Type"],["Long-Distance Operating","Close-Range Utility","Tool Type"]];
+const CL=["crimson and black","steel grey and gold","violet and bone white","teal and sand","rose pink and cream","sunrise orange and white"];
+const MO=["jagged spikes along the forearms","layered shield plates","eyes patterned across the body","thin trailing ribbons","linked chains of light","cracks that glow from within"];
+const FORM=[
+["It is a humanoid Stand about two meters tall that stands behind you, with wide shoulders and fists like cinder blocks. Its knuckles glow faintly each time a hit is stored.","It is a humanoid Stand, lean and fast, with long arms ending in blunt hands. A pale handprint stays on whoever it strikes.","It is not a humanoid. It is a pair of battered metal-plated gauntlets that float around your forearms. You swing them yourself, or grip an object so they can charge it."],
+["It is a humanoid Stand, thick-limbed and armored like a statue, with a plated chest and no visible face. It stands in front of you with its arms crossed.","It is not a humanoid. It is a slowly turning ring of glass-like plates that orbits you at arm's length, like a halo around your whole body.","It is a tool: a stone slab shaped like a door that hovers beside you. It splits, rises and snaps back together to make footholds and barriers."],
+["It is a tool: a spool of fine thread held by a small, thin, almost featureless puppet-like figure. The thread unreels wherever it walks.","It is a small humanoid Stand, about the size of a child, with a mask-like face and hands that always seem to be touching something.","It is a tool: a thin ring-shaped disc drive that floats behind your head. A narrow pale figure holds it, and it opens a slit when it takes a Stand or a memory."],
+["It looks like a hawk-sized bird with a thin mechanical frame and a single glass eye. It flies off on its own and leaves a faint trail of light.","It looks like a cloud of tiny paint-colored sprites, each the size of a coin, that spread out and stick to walls and objects.","It is a tool: a small briefcase on rubbery legs that scuttles across the floor on its own and carries whatever you send."],
+["It is a humanoid Stand, tall, graceful and calm, with long threads of light running from its chest to the people you care about.","It is not a humanoid. It is a ring of linked chains of light that circles you at chest height, with a loop that reaches out to everyone you connect to.","It is a tool: a small lantern-like orb that floats near your shoulder with several ports. Each port lights up when it connects two people."],
+["It is a humanoid Stand, but unfinished: its body is smooth and blank, and it grows new details like spikes, extra joints and plating as it learns from fights.","It is a small, sketchy figure that looks half-drawn, with parts that fill in after every defeat.","It is a tool: a plain, notebook-sized cube with one glowing seam. The seam spreads into new patterns as the Stand grows."]];
+const FCOL="It is a colony: hundreds of tiny identical figures, each about the size of a fingertip. They swarm together, split apart and work as one, though each is a body of its own.";
+const FATT="It is a small, clingy creature that grips the back of its host, arms wrapped around the chest like a parasite. It can latch onto someone even if they already have a Stand.";
+const MFORM=["It is made of thorned vines that grow out of your arm and wind around it like a living rope. They can be thrown out to grab things, or wrapped around a camera or TV to read events.","It is a lean humanoid figure wrapped in spiraling golden lines, with a core in its chest that never stops spinning."];
+const ST=["land one heavy hit","raise a small barrier","notice small details","scout a short distance","sense how others feel","copy tiny tricks"];
+const MAS=["Thorned vines grow out of your arm and can be thrown out like ropes to grab, bind or pull things toward you. Wrap them around a camera or television and they print or show whatever you are concentrating on, a kind of divination. Run Hamon down the vines and everything they touch takes the sunlight energy.","Perfect rotation runs through the Stand. Anything it spins, a coin, a steel ball, its own fists, keeps spinning without losing force, and you can send that spin into a target as controlled, spiraling damage. A spinning object hits like a drill and can curve around obstacles. It all depends on keeping the rhythm."];
+const RD=[["Protecting someone I love",4],["Burning anger",0],["Calm, absolute certainty",2],["Refusing to give up",1],["A need to become more",5],["An urge to be free",3]];
+const WN=["Wavering","Steady","Unbreakable"];
+const WL=["Because your will wavers, its effects are unstable and can misfire.","Your steady will keeps its effects reliable.","Your unbreakable will pushes it to the very limit of what a Stand can do."];
+const TH=["hatch","teal","stripes","streaks","diamonds","rain"],QT=["stripes","streaks","teal","hatch","rain","diamonds"];
+function theme(n){document.body.className="t-"+n}
+const SN=[["Power",0],["Speed",null],["Range",3],["Durability",1],["Precision",2],["Potential",5]];
+const SI={Power:0,Speed:1,Range:2,Durability:3,Precision:4,Potential:5};
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+let idx=0,sc,ans,uname="",userStandName="",oi=0,mi=0,ot=-1,rqDone=false,rctx={d:-1,w:1};
+
+const RM=matchMedia("(prefers-reduced-motion:reduce)").matches;
+const SFX=[["オラオラオラ","ORA ORA ORA","#2455ff"],["ムダムダムダ","MUDA MUDA MUDA","#ffd21f"],["ドララララ","DORARARARA","#ff2f92"],["アリアリアリ","ARI ARI ARI","#19c3e6"],["ボラボラボラ","VOLA VOLA VOLA","#ff8a1f"],["レロレロ","REERO REERO","#a63cff"],["ゴゴゴ","GO GO GO","#ff4fa3"],["ドドド","DO DO DO","#2455ff"],["ズキュウウン","ZUKYUUN","#ff8a1f"],["バァーン","BAAN","#e0162b"],["メメタァ","MEMETAA","#19c3e6"],["ビシッ","BISHI","#ffd21f"]];
+let sfxN=0;
+function pop(t,lab,col,x,y,size){
+ if(RM)return;
+ const e=document.createElement("div");e.className="pop";
+ e.style.cssText=`left:${x}px;top:${y}px;font-size:${size}px;color:${col};--r:${(Math.random()*24-12).toFixed(0)}deg`;
+ e.innerHTML=t+"<small>"+lab+"</small>";document.body.appendChild(e);setTimeout(()=>e.remove(),1450);
+}
+function popR(ev){const f=SFX[Math.floor(Math.random()*SFX.length)];const x=Math.min(Math.max(ev.clientX||innerWidth/2,110),innerWidth-110);pop(f[0],f[1],f[2],x,ev.clientY||innerHeight/2,Math.min(60,innerWidth/7))}
+const mid=()=>[innerWidth/2,innerHeight*.38,Math.min(110,innerWidth/4.2)];
+function chips(el,list,sel,fn){el.innerHTML="";list.forEach((t,i)=>{const b=document.createElement("button");b.className="chip";b.textContent=t;b.setAttribute("aria-pressed",String(i===sel()));b.onclick=()=>{fn(i);[...el.children].forEach((c,j)=>c.setAttribute("aria-pressed",String(j===i)))};el.appendChild(b)})}
+function show(id){["intro","quiz","result"].forEach(s=>$(s).classList.toggle("hide",s!==id));window.scrollTo(0,0)}
+function hash(s){let h=0;for(let i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))>>>0;return h}
+function ask(){
+ theme(QT[idx%6]);
+ const q=Q[idx];$("pbar").style.width=(idx/Q.length*100)+"%";
+ $("pcount").textContent="Question "+(idx+1)+" of "+Q.length;$("qtext").textContent=q[0];
+ $("opanel").classList.add("hide");$("otext").value="";ot=-1;
+ chips($("otraits"),CH,()=>ot,i=>ot=i);
+ const box=$("opts");box.innerHTML="";
+ q[1].forEach(o=>{const b=document.createElement("button");b.className="opt";b.textContent=o[0];b.onclick=()=>pick(o[0],o.slice(1));box.appendChild(b)});
+ const x=document.createElement("button");x.className="opt other";x.textContent="Something else...";x.onclick=()=>{$("opanel").classList.remove("hide");$("otext").focus()};box.appendChild(x);
+}
+function pick(txt,ts,other){
+ const w=[0,0,0,0,0,0];ts.forEach((t,i)=>w[t]+=i===0?3:1);
+ ans.push({q:Q[idx][0],txt,w,other});w.forEach((v,t)=>sc[t]+=v);
+ idx++;idx<Q.length?ask():finish();
+}
+$("oconfirm").onclick=ev=>{
+ const v=$("otext").value.trim();
+ if(!v){$("otext").focus();return}
+ if(ot<0){$("otraits").firstChild.focus();return}
+ pick(v,[ot],true);
+};
+function rank(p){return p>=.8?"A":p>=.6?"B":p>=.4?"C":p>=.2?"D":"E"}
+
+function radar(st){
+ const cx=160,cy=128,R=78,pt=(i,r)=>[cx+r*Math.cos(Math.PI*(-90+60*i)/180),cy+r*Math.sin(Math.PI*(-90+60*i)/180)];
+ const poly=r=>[0,1,2,3,4,5].map(i=>pt(i,r).map(v=>v.toFixed(1)).join(",")).join(" ");
+ let g="";for(let k=1;k<=5;k++)g+=`<polygon points="${poly(R*k/5)}" fill="none" stroke="#000" stroke-width="${k===5?4:1.2}"/>`;
+ for(let i=0;i<6;i++){const q=pt(i,R);g+=`<line x1="${cx}" y1="${cy}" x2="${q[0].toFixed(1)}" y2="${q[1].toFixed(1)}" stroke="#000" stroke-width="1.5"/>`}
+ const vp=st.map(([n,p],i)=>pt(i,R*Math.max(.12,p)).map(v=>v.toFixed(1)).join(",")).join(" ");
+ g+=`<polygon points="${vp}" fill="#ff2a8a" fill-opacity=".72" stroke="#000" stroke-width="4" stroke-linejoin="round"/>`;
+ st.forEach(([n,p],i)=>{const a=pt(i,R+17),b=pt(i,R+36);g+=`<text x="${a[0].toFixed(0)}" y="${(a[1]+5).toFixed(0)}" text-anchor="middle" font-family="Bangers,Impact,sans-serif" font-size="16" letter-spacing="1" fill="#000">${n}</text><text x="${b[0].toFixed(0)}" y="${(b[1]+7).toFixed(0)}" text-anchor="middle" font-family="Dela Gothic One,Impact,sans-serif" font-size="20" fill="#ffe600" stroke="#000" stroke-width="5" paint-order="stroke fill">${rank(p)}</text>`});
+ return `<svg viewBox="0 0 320 262" role="img" aria-label="Stand stat chart">${g}</svg>`;
+}
+function burst(h){const p=[],n=26;for(let i=0;i<n*2;i++){const a=Math.PI*i/n,r=i%2?.64:1+((h>>(i%9))&3)*.05;p.push((200+Math.cos(a)*r*196).toFixed(0)+","+(60+Math.sin(a)*r*58).toFixed(0))}return `<svg class="burst" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true"><polygon points="${p.join(" ")}" fill="#fff" stroke="#000" stroke-width="4" stroke-linejoin="round"/></svg>`}
+function form(top,sec,h,pct,master){
+ const n=h%10+2,v=(h>>3)%3;
+ if(master)return{k:"master",t:oi===1?"Hamon Mastery Stand":"Spin Mastery Stand",note:"Every Hamon or Spin user with real mastery can call this Stand, so it is the same for each master."};
+ if(top===5||pct[5]>=.85)return{k:"act",act:1,t:"Act Type",note:"It evolves in Acts alongside you, and its abilities change as you grow."};
+ if(top===3){
+  if(sec===1)return{k:"attached",t:"Attached Type",note:"It can latch onto a host who already has a Stand, like Cheap Trick."};
+  if(sec===4||h%2)return{k:"colony",t:"Colony Type",note:"It acts as many small units. Unlike most Stands, damage to colony units is usually not shared with you."};
+  return{k:"remote",t:"Remote Roaming",note:""};
+ }
+ if(top===4)return{k:"shared",n,t:"Shared Stand",note:`This Stand is shared by a group of ${n}, like Tomb of the Boom or Tattoo You. Each member gets their own variation of one core idea; yours is number ${h%n+1} of ${n}.`};
+ return{k:"plain",t:TYV[top][v],note:""};
+}
+function build(rq){
+ const max=T.map((_,t)=>Q.reduce((s,q)=>s+Math.max(...q[1].map(o=>o.slice(1).reduce((a,x,i)=>x===t?a+(i===0?3:1):a,0))),0));
+ const pct=sc.map((s,t)=>Math.min(1,s/max[t]));
+ const ord=pct.map((p,t)=>[p,t]).sort((a,b)=>b[0]-a[0]||a[1]-b[1]).map(x=>x[1]);
+ const top=ord[0],sec=ord[1],low=ord[5],h=hash(uname.toLowerCase()+ans.map(a=>a.txt).join("|")),o=OR[oi],v=(h>>3)%3;
+ const master=(oi===1||oi===2)&&mi===1,f=form(top,sec,h,pct,master),dt=RD[rctx.d]?RD[rctx.d][1]:top;
+ const best=t=>ans.reduce((m,a)=>a.w[t]>m.w[t]?a:m,ans[0]);
+ const q=a=>a.other?`your own answer, "${a.txt}"`:`"${a.txt}"`;
+ const boost=.1+.3*[.3,.65,1][rctx.w];
+ const stats=SN.map(([n,t])=>{let p=t===null?(pct[0]+pct[2])/2:pct[t];const b=o.b[SI[n]];if(b)p+=b;if(rq)p+=boost;return [n,Math.min(1,p)]});
+ if(!rq)theme(TH[top]);
+ const base=userStandName||"???";
+ const nm=base+(rq?" Requiem":"");
+ let fm=master?MFORM[oi-1]:f.k==="colony"?FCOL:f.k==="attached"?FATT:FORM[top][v];
+ if(f.k==="shared")fm+=` Because ${f.n} people share it, every member's version looks a little different, and yours is number ${h%f.n+1}.`;
+ fm+=` Its coloring is ${CL[top]}, and it has ${MO[sec]}.`;
+ if(rq)fm="Requiem has pushed it past its old shape: it is larger, edged in gold, and its outline never quite holds still. "+fm;
+ const core=master?`${MAS[oi-1]} ${TW[sec]}`:`${DOM[top][v]} ${TW[sec]} ${o.tw}`;
+ const ability=rq?`${RQ[dt]} ${RO[oi]} ${WL[rctx.w]}`:core;
+ const acts=`Act 1: small and unfinished. All it can do is ${ST[sec]}.\nAct 2: ${DOM[top][v]}\nAct 3: fully grown. ${TW[sec]} ${o.tw}`;
+ const why=rq?`Requiem is born when the Arrow pierces a Stand, and what comes out depends on your willpower, resolve and psyche at that exact moment. You were driven by "${RD[rctx.d][0].toLowerCase()}" with a ${WN[rctx.w].toLowerCase()} will, so the Stand grew toward ${T[dt].toLowerCase()}. Your strongest trait, ${T[top].toLowerCase()}, still sits at its core, and as a ${o.n.toLowerCase()}, ${o.dev}`:
+ `When the trial asked "${best(top).q}", you chose ${q(best(top))}. That is ${T[top].toLowerCase()}: ${WHY0[top]}, and it is the main reason your Stand took this shape. You also showed ${T[sec].toLowerCase()} when you answered ${q(best(sec))}, which is where its secondary power comes from. `+(master?`Because you have real mastery of ${oi===1?"Hamon":"Spin"}, ${base} answers to you, and your personality decides how it shows itself. `:`As a ${o.n.toLowerCase()}, ${o.dev} `)+`On the other side, you showed almost no ${T[low].toLowerCase()}, so that is where it is weakest.`;
+ const weak=rq?`${RW[dt]}${rctx.w===0?" Your wavering will leaves it unstable.":""}`:`${CO[low]} ${o.wk}`;
+ const sec_=(t,b)=>`<div class="sec"><b>${t}</b><div>${b}</div></div>`;
+ return (rq?`<div class="band" aria-hidden="true"><span>${"オラオラオラ ムダムダムダ ".repeat(4)}</span></div>`:"")+`<div class="muted">${rq?"The Stand evolves":"Stand of "+esc(uname)} &middot; ${esc(o.n)}${master?" (Mastery)":""}</div><div class="hd">${burst(h)}<h2 class="name">${esc(nm)}</h2></div>`+
+ sec_("Type",esc(f.t+(rq?" (Requiem)":"")+(f.note?"\n"+f.note:"")))+sec_("Form",esc(fm))+sec_("Ability",esc(ability))+(f.act&&!rq?sec_("Acts",esc(acts)):"")+
+ sec_("Why you awakened this",esc(why))+sec_("Weakness",esc(weak))+
+ `<div class="lab">Stand stats</div><div class="art">${radar(stats)}</div>`;
+}
+function fill(el){setTimeout(()=>el.querySelectorAll("i[data-w]").forEach(i=>i.style.width=i.dataset.w+"%"),60)}
+function finish(){
+ $("pbar").style.width="100%";
+ userStandName="";$("sname").value="";
+ $("out").innerHTML=build(false);fill($("out"));
+ $("namecard").classList.remove("hide");
+ $("sentcard").classList.add("hide");
+ $("rq").classList.add("hide");$("rq").innerHTML="";rqDone=false;$("rpanel").classList.add("hide");$("reqbtn").classList.add("hide");
+ show("result");
+ setTimeout(()=>{pop("ゴゴゴ","GO GO GO","#ff4fa3",...mid());$("sname").focus()},200);
+}
+function named(){
+ $("namecard").classList.add("hide");
+ $("out").innerHTML=build(false);fill($("out"));
+ $("reqbtn").classList.remove("hide");
+ pop("ドギャァァン","DOGYAAAN","#ff2f92",...mid());
+ $("out").scrollIntoView({behavior:"smooth"});
+}
+let wantMail=false;
+$("mailtog").onclick=()=>{wantMail=!wantMail;$("mailtog").setAttribute("aria-pressed",String(wantMail));$("mailrow").classList.toggle("hide",!wantMail);if(wantMail)$("uemail").focus()};
+function reportText(){
+ let r=`JOJO STAND TRIAL REPORT\nUser: ${uname}\nStand Name: ${userStandName}\n\n-- PROMPTS & ANSWERS --\n`;
+ Q.forEach((q,i)=>{r+=`Q${i+1}: ${q[0]}\nAnswer: ${ans[i]?ans[i].txt:"No answer"}\n\n`});
+ return r+"-- STAND PROFILE --\n"+$("out").innerText;
+}
+function sendCopy(email){
+ const full=reportText(),sub="My JoJo Stand Trial Report - "+userStandName,gm=/@(gmail|googlemail)\.com$/i.test(email);
+ if(navigator.clipboard)navigator.clipboard.writeText(full).catch(()=>{});
+ const mk=b=>gm?`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(sub)}&body=${encodeURIComponent(b)}`:`mailto:${email}?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent(b)}`;
+ let body=full,url=mk(body);
+ while(url.length>7000&&body.length>200){body=body.slice(0,Math.floor(body.length*.85));url=mk(body)}
+ $("maillink").href=url;
+ $("sentmsg").textContent="A draft to "+email+" should open in a new tab. If it did not, use the button below. The full report is also copied to your clipboard"+(body.length<full.length?", and the draft holds a shortened version, so paste the full one in if you like.":".");
+ $("sentcard").classList.remove("hide");
+ window.open(url,"_blank");
+}
+$("copyrep").onclick=()=>{if(navigator.clipboard)navigator.clipboard.writeText(reportText()).then(()=>{$("copyrep").textContent="Copied!"}).catch(()=>{})};
+function claim(name){
+ const em=$("uemail").value.trim();
+ if(wantMail&&!/^\S+@\S+\.\S+$/.test(em)){$("mailerr").classList.remove("hide");$("uemail").focus();return}
+ $("mailerr").classList.add("hide");
+ userStandName=name;named();
+ if(wantMail)sendCopy(em);
+}
+$("nameit").onclick=()=>{
+ const v=$("sname").value.trim();
+ if(!v){$("sname").focus();$("sname").placeholder="Name your Stand (song, band or album)!";return}
+ claim(v);
+};
+$("skipname").onclick=()=>{
+ const master=(oi===1||oi===2)&&mi===1;
+ claim(master?(oi===1?"Hermit Purple":"Ball Breaker"):"Nameless Stand");
+};
+$("sname").addEventListener("keydown",e=>{if(e.key==="Enter")$("nameit").click()});
+function initR(){rctx={d:-1,w:1};chips($("rdrive"),RD.map(x=>x[0]),()=>rctx.d,i=>rctx.d=i);chips($("rwill"),WN,()=>rctx.w,i=>rctx.w=i)}
+$("reqbtn").onclick=()=>{initR();$("reqbtn").classList.add("hide");$("rpanel").classList.remove("hide");$("rpanel").scrollIntoView({behavior:"smooth"})};
+$("rgo").onclick=()=>{
+ if(rctx.d<0){$("rdrive").firstChild.focus();return}
+ pop("オラオラオラ","ORA ORA ORA","#ffd21f",...mid());setTimeout(()=>pop("ムダムダムダ","MUDA MUDA MUDA","#a63cff",innerWidth/2,innerHeight*.6,mid()[2]*.85),500);
+ $("rpanel").classList.add("hide");
+ $("rq").innerHTML=build(true);$("rq").classList.remove("hide");fill($("rq"));
+ $("rq").scrollIntoView({behavior:"smooth"});
+};
+function updM(){$("mast").classList.toggle("hide",oi<1||oi>2);$("mdesc").textContent=oi===1?"With real mastery, Hermit Purple answers every Hamon user.":oi===2?"With real mastery, Ball Breaker answers every Spin user.":""}
+chips($("origins"),OR.map(o=>o.n),()=>oi,i=>{oi=i;$("odesc").textContent=OR[i].d;updM()});
+chips($("mchips"),["Still learning","Real mastery"],()=>mi,i=>{mi=i});
+$("odesc").textContent=OR[0].d;
+
+
+function begin(){
+ const v=$("uname").value.trim();
+ if(!v){$("uname").focus();$("uname").placeholder="Enter your name to begin";return}
+ uname=v;userStandName="";idx=0;ans=[];sc=T.map(()=>0);show("quiz");ask();pop("ゴゴゴ","GO GO GO","#ff4fa3",...mid());
+}
+$("start").onclick=begin;
+$("uname").addEventListener("keydown",e=>{if(e.key==="Enter")begin()});
+$("again").onclick=()=>{theme("diamonds");show("intro");$("uname").focus()};
+document.addEventListener("click",ev=>{const b=ev.target.closest&&ev.target.closest("button");if(b&&!b.hasAttribute("data-big"))popR(ev)});
+(function(){const box=$("spk");[[8,12,26],[84,9,20],[22,38,16],[92,44,28],[12,66,22],[70,74,18],[46,88,24],[90,90,16],[40,6,14]].forEach(([x,y,z],i)=>{const e=document.createElement("i");e.className="spk";e.style.cssText=`left:${x}%;top:${y}%;width:${z}px;height:${z}px;animation-delay:${i*.45}s`;box.appendChild(e)})})();
+</script>
+</body>
+</html>
